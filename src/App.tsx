@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Routes, Route, NavLink } from "react-router-dom";
+import { AppointmentsPage } from "./pages/AppointmentsPage";
+import { ContactsPage } from "./pages/ContactsPage";
+import { IContact } from "./interfaces/IContact";
+import { IAppointment } from "./interfaces/IAppointment";
+import { IAppProps } from "./interfaces/IAppProps";
 
-function App() {
+const App: React.FunctionComponent<IAppProps> = (props) => {
+  const [contacts, setContacts] = useState<IContact[]>([])
+  const [appointments, setAppointments] = useState<IAppointment[]>([])
+
+  const onAddContactHandler = (contact: IContact) => {
+    setContacts((prev: IContact[]) => {
+      return [contact, ...prev]
+    })
+  }
+
+  const onAddAppointmentHandler = (appointment: IAppointment) => {
+    setAppointments((prev: IAppointment[]) => {
+      return [appointment, ...prev]
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav>
+        <NavLink to="/contacts" >
+          Contacts
+        </NavLink>
+        <NavLink to="/appointments" >
+          Appointments
+        </NavLink>
+      </nav>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<ContactsPage contacts={contacts} addContact={onAddContactHandler} />} />
+          <Route path="/contacts" element={<ContactsPage contacts={contacts} addContact={onAddContactHandler} />} />
+          <Route path="/appointments" element={<AppointmentsPage
+            contacts={contacts}
+            appointments={appointments}
+            addAppointment={onAddAppointmentHandler} />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 
