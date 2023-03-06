@@ -1,12 +1,15 @@
 # Appointment Schedule
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Description
-
 This is a React.js application where you can add contacts and schedule appointments with them.
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
+To see the demo in higher quality click on the gif below.
+
+![Appointment Schedule Demo](demo/animacao.gif)
+
+## Run
+
+Run 'npm start' to run the app.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

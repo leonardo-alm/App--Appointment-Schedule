@@ -9,12 +9,14 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    align-items: center;    
+    align-items: center;
+    background-color: rgb(17, 50, 67);    
 }
 
 .container{
     background-color: rgb(2, 111, 125);
     padding: 30px;
+    margin-bottom: 160px;
     border-radius: 20px;
 }
 
@@ -22,10 +24,18 @@ nav>a {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    color: #ffffff;
+    color: whitesmoke;
     font-weight: bold;
     text-decoration-line: none;
-    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+nav>a:hover{
+    background-color: whitesmoke;
+    color: rgb(2, 111, 125);;
 }
 
 nav>a.active {
@@ -33,35 +43,38 @@ nav>a.active {
 }
 
 nav {
-
     margin-bottom: 20px;
-    background-color: #03a8d8;
+    background-color: rgb(2, 111, 125);
     border-radius: 15px;
-    padding: 20px;
+    width: 36%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
 }
+
 
 h2 {
     font-weight: bold;
     font-size: 18px;
-    color:#ffffff;
+    color:whitesmoke;
     margin: 0;
     margin-bottom: 18px;
 }
 
 p{
-    color: #ffffff;
+    color: whitesmoke;
 }
 
 hr {
     border: none;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid whitesmoke;
     margin: 20px 0;
 }
 
 input[type="submit"] {
-    background: #03a8d8;
+    background: whitesmoke; 
     border-radius: 4px;
-    color: #ffffff;
+    color: rgb(17, 50, 67);
     font-weight: bold;
     font-size: 14px;
     border: none;
@@ -80,7 +93,7 @@ input[type="submit"]:hover {
 input,
 select {
     font-family: "Open Sans", sans-serif;
-    background: #ffffff;
+    background: whitesmoke;
     border: 1px solid #979797;
     border-radius: 4px;
     padding: 7px 9.5px 9px 9.5px;
