@@ -2,13 +2,13 @@ import { IContactFormProps } from "../../interfaces/IContactFormProps";
 
 export const ContactForm = (props: IContactFormProps) => {
   const {
+    handleSubmit,
     name,
     setName,
     phone,
     setPhone,
     email,
     setEmail,
-    handleSubmit
   } = props
 
   return (

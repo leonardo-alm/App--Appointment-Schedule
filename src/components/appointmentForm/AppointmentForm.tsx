@@ -4,23 +4,27 @@ import { ContactPicker } from "../contactPicker/ContactPicker";
 
 export const AppointmentForm = (props: IAppointmentFormProps) => {
   const {
+    handleSubmit,
     contacts,
+    setContact,
     title,
     setTitle,
-    setContact,
     date,
     setDate,
     time,
-    setTime,
-    handleSubmit
+    setTime
   } = props
 
-  const getTodayString = () : string => {
+  const getTodayString = (): string => {
     const [month, day, year] = new Date()
       .toLocaleDateString("en-US")
       .split("/");
     return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
   };
+
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setContact(e.target.value)
+  }
 
   return (
     <form className="AddContactForm" onSubmit={handleSubmit}>
@@ -48,9 +52,9 @@ export const AppointmentForm = (props: IAppointmentFormProps) => {
       />
       <ContactPicker
         contacts={contacts}
-        handleChange={(e: React.ChangeEvent<HTMLSelectElement>) => setContact(e.target.value)}
+        handleChange={handleChange}
       />
-      <input type="submit" value="Add appointment"/>
+      <input type="submit" value="Add appointment" />
     </form>
   );
 };

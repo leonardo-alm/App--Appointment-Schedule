@@ -6,7 +6,7 @@ import { IContact } from "./interfaces/IContact";
 import { IAppointment } from "./interfaces/IAppointment";
 import { IAppProps } from "./interfaces/IAppProps";
 
-const App: React.FunctionComponent<IAppProps> = (props) => {
+const App: React.FunctionComponent<IAppProps> = () => {
   const [contacts, setContacts] = useState<IContact[]>([])
   const [appointments, setAppointments] = useState<IAppointment[]>([])
 
